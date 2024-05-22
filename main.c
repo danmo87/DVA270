@@ -18,6 +18,6 @@ int keypress = get_key();
   switch(keypress){
     case 8:
     start_game_grupp8();
-    breaK;
+    break;
   }
 }
