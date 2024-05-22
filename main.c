@@ -63,6 +63,9 @@ int keypress = get_key();
       //antar att uarte och rtc är initializade globalt som [sak]_instance
       start_game_group19();
       break;
+    case 9:
+      init_start();
+    break;
 
   //osv osv
   }
