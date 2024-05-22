@@ -31,6 +31,7 @@ SRC_FILES        += 14.c
 SRC_FILES        += matrix_game_7.c
 SRC_FILES        += grupp6spel.c
 SRC_FILES        += group19.c
+SRC_FILES        += FakesnakeGrupp4.c
 SRC_FILES        += 9.c
 #SRC_FILES        += list.c
 SRC_FILES        += grupp8spel.c
