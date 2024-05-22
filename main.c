@@ -14,7 +14,7 @@
 #include "grupp25_game.h"
 #include "grupp6spel.h" // Grupp 6 sten sax påse
 #include <group19.h>
-
+#include <9.h>
 
 /* By Daniel Morberg*/
 
@@ -61,6 +61,9 @@ int keypress = get_key();
       //antar att uarte och rtc är initializade globalt som [sak]_instance
       start_game_group19();
       break;
+    case 9:
+      init_start();
+    break;
   //osv osv
   }
  
