@@ -35,6 +35,9 @@ int keypress = get_key();
     case 3:
     start_game_grupp3();
       break;
+    case 7:
+      start_game_grupp_7();
+      break;
     case 21:
     start_game_grupp21();
     break;
