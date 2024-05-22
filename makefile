@@ -33,6 +33,7 @@ SRC_FILES        += grupp6spel.c
 SRC_FILES        += group19.c
 SRC_FILES        += FakesnakeGrupp4.c
 SRC_FILES        += 9.c
+SRC_FILES        += 24.c
 #SRC_FILES        += list.c
 SRC_FILES        += grupp8spel.c
 # Här kan ni länka till extra source filer ni vill använda.

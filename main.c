@@ -19,6 +19,8 @@
 #include <group19.h>
 #include <nonblocking.h>// Grupp 5 tjuv och polis spel wdas jlki för rörelse
 #include <9.h>
+#include <24.h> //grupp 24
+
 
 
 /* By Daniel Morberg*/
@@ -78,6 +80,9 @@ int keypress = get_key();
     case 9:
       init_start();
     break;
+    case 24:
+      start_game_group24();
+      break;
   //osv osv
   }
  
