@@ -29,13 +29,19 @@ int keypress = get_key();
     //anrop till grupp 1's funktion
 
     break;
+
+    case 14:
+    start_game_grupp14(); //banger-spel
+    break;
+    case 17:
+    start_game_grupp17();
+  break;
     case 6:
     start_game_grupp6();
     break;
-
     case 13:
     start_game_grupp13();       /* i assume that systick and uarte is initiated, and that nonblocking uarte is also initiated
-                               the goal of the game is to eat 10 "O" characters and at the same time avoid the "I" character*/
+                                the goal of the game is to eat 10 "O" characters and at the same time avoid the "I" character*/
       break;
     case 17:
       start_game_grupp17();
