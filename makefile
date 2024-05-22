@@ -20,6 +20,7 @@ SRC_FILES        += $(PROJ)/mdk/gcc_startup_nrf5340_application.S
 SRC_FILES        += $(PROJ)/mdk/system_nrf5340_application.c
 SRC_FILES        += main.c
 SRC_FILES        += Grupp17.c
+SRC_FILES        += grupp25_game.c
 #SRC_FILES        += list.c
 # Här kan ni länka till extra source filer ni vill använda.
 #SRC_FILES        += $(PROJ)/drivers/src/nrfx_uarte.c
