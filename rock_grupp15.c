@@ -108,6 +108,9 @@ void game_loop(void)
     srand(time(NULL));       //Ger random en seed
     nrfx_systick_init();     //Funktion för att kalla delay
 
+     NVIC_ClearPendingIRQ(NRFX_IRQ_NUMBER_GET(NRF_UARTE_INST_GET(0)));
+    NVIC_EnableIRQ(NRFX_IRQ_NUMBER_GET(NRF_UARTE_INST_GET(0)));
+
 
     const nrfx_uarte_config_t config = NRFX_UARTE_DEFAULT_CONFIG(PIN_TXD, PIN_RXD);
     nrfx_uarte_init(&instance, &config, uarte_handler);   //Kallar på uarte_handler

@@ -1,4 +1,4 @@
- # Build Nordic NRF5340DK_CPUAPP example
+# Build Nordic NRF5340DK_CPUAPP example
 # Definera filnamn och bestäm relativa paths. $(CURDIR) är där vi är just nu i terminalen och $PROJ sätts som 2 folders
 # bakåt:
 
@@ -18,32 +18,13 @@ STACK_SIZE       := 16384
 # Source filer vi behöver. De första 2 är krav och definerar variabler specifika för vårt kort.
 SRC_FILES        += $(PROJ)/mdk/gcc_startup_nrf5340_application.S
 SRC_FILES        += $(PROJ)/mdk/system_nrf5340_application.c
-SRC_FILES        += main.c
-SRC_FILES		 += Grupp3.c
-SRC_FILES        += grupp_21.c
-SRC_FILES        += 13.c
+SRC_FILES        += main_grupp15.c
+# Här kan ni länka till extra source filer ni vill använda.
+# SRC_FILES        += inte_en_riktigt_fil.c'
 SRC_FILES        += $(PROJ)/drivers/src/nrfx_uarte.c
 SRC_FILES        += $(PROJ)/drivers/src/nrfx_systick.c
-SRC_FILES        += Grupp17.c
-SRC_FILES        += grupp25_game.c
-SRC_FILES        += hungry_elephant_game14.c
-SRC_FILES        += 14.c
-SRC_FILES        += matrix_game_7.c
-SRC_FILES        += grupp6spel.c
-SRC_FILES        += group19.c
-SRC_FILES        += FakesnakeGrupp4.c
-SRC_FILES        += 9.c
-#SRC_FILES        += list.c
-SRC_FILES        += grupp8spel.c
-# Här kan ni länka till extra source filer ni vill använda.
-SRC_FILES        += $(PROJ)/drivers/src/nrfx_uarte.c
-SRC_FILES		 += $(PROJ)/drivers/src/nrfx_systick.c
-#SRC_FILES		 += $(PROJ)/drivers/src/nrfx_temp.c
-#SRC_FILES		 += list.c
-#SRC_FILES		 += $(PROJ)/drivers/src/nrfx_rtc.c
-#SRC_FILES		 += $(PROJ)/drivers/src/nrfx_rng.c
-#SRC_FILES		 += $(PROJ)/drivers/src/prs/nrfx_prs.c
-# SRC_FILES        += inte_en_riktigt_fil.c
+SRC_FILES        += $(PROJ)/drivers/src/nrfx_rtc.c
+SRC_FILES        += $(PROJ)/grupp15/rock_grupp15.c
 # Definera folders
 SRC_DIRS         := $(dir $(SRC_FILES))
 SRCES            := $(notdir $(SRC_FILES))
@@ -56,17 +37,18 @@ INC_FOLDERS      += $(PROJ)/soc
 INC_FOLDERS      += $(PROJ)/haly
 INC_FOLDERS      += $(PROJ)/drivers/
 INC_FOLDERS      += $(PROJ)/drivers/include
-INC_FOLDERS      += $(PROJ)/drivers/src/prs
+INC_FOLDERS      += $(PROJ)/drivers/prs
 INC_FOLDERS      += $(PROJ)/CMSIS/Core/Include
 INC_FOLDERS      += $(PROJ)/mdk
 INC_FOLDERS      += $(PROJ)/src
+INC_FOLDERS      += $(PROJ)/grupp15
 INC_FOLDERS      += $(CURDIR)
 INC_FOLDERS      += $(PROJ)
 INC_FOLDERS      += $(PROJ)/helpers
 CFLAGS           += -std=c99 -MP -MD -c -g3 $(OPTIMISE)
 CFLAGS           += -DBOARD_CUSTOM -DBSP_DEFINES_ONLY -DCONFIG_GPIO_AS_PINRESET -DFLOAT_ABI_HARD -DNRF5340_XXAA_APPLICATION
 CFLAGS           += -mcpu=cortex-m33 -mthumb -mabi=aapcs -Wall -mfloat-abi=hard -mfpu=fpv5-sp-d16 -ffunction-sections -fdata-sections
-CFLAGS           += -fno-strict-aliasing -fno-builtin -fshort-enums -D__HEAP_SIZE=$(HEAP_SIZE) -D__STACK_SIZE=$(STACK_SIZE) -DDEBUG
+CFLAGS           += -fno-strict-aliasing -fno-builtin -fshort-enums -D__HEAP_SIZE=$(HEAP_SIZE) -D__STACK_SIZE=$(STACK_SIZE)
 
 LNFLAGS          += -O3 -g3 -mthumb -mabi=aapcs -L$(PROJ)/mdk -T$(LINKER_SCRIPT) -mcpu=cortex-m33 -mfloat-abi=hard -mfpu=fpv5-sp-d16
 LNFLAGS          += -Wl,--gc-sections  --specs=nano.specs
