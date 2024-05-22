@@ -1,7 +1,5 @@
 #include "grupp25_game.h"
 
-// nrfx_uarte_t instance = NRFX_UARTE_INSTANCE(0);
-// uint8_t uarte_buffer;
 uint8_t tab[] = "  ", newRow[] = "\n\r";
 int x = 0, y = 0, prevY = 0, prevX = 0, winY = 6, winX = 8, flag = 0, loopean = 1;
 int matrix[SIZE][SIZE];
@@ -14,16 +12,7 @@ void uarte_write(uint8_t* data, uint8_t length){
 }
 
 void init_all(){
-    // NVIC_ClearPendingIRQ(NRFX_IRQ_NUMBER_GET(NRF_UARTE_INST_GET(0)));
-    // NVIC_EnableIRQ(NRFX_IRQ_NUMBER_GET(NRF_UARTE_INST_GET(0)));
-    // const nrfx_uarte_config_t config = NRFX_UARTE_DEFAULT_CONFIG(PIN_TXD, PIN_RXD);
-    // nrfx_err_t errr = nrfx_uarte_init(&instance, &config, uarte_handler);
-    // if(errr != 0){}
-    
-    // nrfx_systick_init();
-
-    
-    // Initialize the matrix to 0
+// Initialize the matrix to 0
     for (int j = 0; j < SIZE; j++) {
         for (int i = 0; i < SIZE; i++) {
             matrix[i][j] = 0;
