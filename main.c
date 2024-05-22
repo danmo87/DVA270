@@ -9,7 +9,9 @@
 #include "13.h" //inkludera er header fil.
 #include "grupp1.h" //inkludera er header fil.
 #include "header17.h"//Grupp 17;Spelet går ut på att komma till rätt okänd koordinat mha. förflyttning med j,k,l,i
+#include "grupp6spel.h" // Grupp 6 sten sax påse
 #include <group19.h>
+
 
 
 /* By Daniel Morberg*/
@@ -25,12 +27,16 @@ int keypress = get_key();
   switch(keypress){
     case 1:
     //anrop till grupp 1's funktion
-      break;
+
+    break;
+    case 6:
+    start_game_grupp6();
+    break;
+
     case 13:
     start_game_grupp13();       /* i assume that systick and uarte is initiated, and that nonblocking uarte is also initiated
-                                the goal of the game is to eat 10 "O" characters and at the same time avoid the "I" character*/
+                               the goal of the game is to eat 10 "O" characters and at the same time avoid the "I" character*/
       break;
-
     case 17:
       start_game_grupp17();
       break;
