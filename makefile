@@ -23,6 +23,7 @@ SRC_FILES        += 13.c
 SRC_FILES        += $(PROJ)/drivers/src/nrfx_uarte.c
 SRC_FILES        += $(PROJ)/drivers/src/nrfx_systick.c
 
+SRC_FILES        += Grupp17.c
 #SRC_FILES        += list.c
 # Här kan ni länka till extra source filer ni vill använda.
 #SRC_FILES        += $(PROJ)/drivers/src/nrfx_uarte.c
