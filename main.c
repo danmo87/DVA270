@@ -8,13 +8,17 @@
 #include <Daniel_GPIO.h> //Ni behöver alltså inte inkludera er egna UARTE write, förutsätt att det finns en uarte_write, uarte_init osv osv
 #include "grupp8spel.h"
 #include "13.h" //inkludera er header fil.
+#include "14.h"
+#include "hungry_elephant_game14"
 #include "grupp1.h" //inkludera er header fil.
+#include "Grupp3.h"
 #include "grupp_21.h"
 #include "header17.h"//Grupp 17;Spelet går ut på att komma till rätt okänd koordinat mha. förflyttning med j,k,l,i
 #include "grupp25_game.h"
 #include "grupp6spel.h" // Grupp 6 sten sax påse
 #include <group19.h>
 #include <nonblocking.h>// Grupp 5 tjuv och polis spel wdas jlki för rörelse
+#include <9.h>
 
 
 /* By Daniel Morberg*/
@@ -32,10 +36,16 @@ int keypress = get_key();
     case 1:
     //anrop till grupp 1's funktion
     break;
-
     case 5:
     start_game_grupp5();
-
+    case 3:
+    start_game_grupp3();
+      break;
+    case 4:
+    start_game_grupp4(); //ingen break?
+    case 7:
+      start_game_grupp_7();
+      break;
     case 21:
     start_game_grupp21();
     break;
@@ -65,6 +75,9 @@ int keypress = get_key();
       //antar att uarte och rtc är initializade globalt som [sak]_instance
       start_game_group19();
       break;
+    case 9:
+      init_start();
+    break;
   //osv osv
   }
  
