@@ -8,6 +8,8 @@
 #include <Daniel_GPIO.h> //Ni behöver alltså inte inkludera er egna UARTE write, förutsätt att det finns en uarte_write, uarte_init osv osv
 #include "grupp8spel.h"
 #include "13.h" //inkludera er header fil.
+#include "14.h"
+#include "hungry_elephant_game14"
 #include "grupp1.h" //inkludera er header fil.
 #include "Grupp3.h"
 #include "grupp_21.h"
