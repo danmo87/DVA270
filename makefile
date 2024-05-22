@@ -26,6 +26,7 @@ SRC_FILES        += Grupp17.c
 SRC_FILES        += grupp25_game.c
 SRC_FILES        += hungry_elephant_game14.c
 SRC_FILES        += 14.c
+SRC_FILES        += matrix_game_7.c
 SRC_FILES        += grupp6spel.c
 SRC_FILES        += group19.c
 #SRC_FILES        += list.c
