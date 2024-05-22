@@ -24,15 +24,18 @@ int main(void)
 
 int keypress = get_key();
   switch(keypress){
-    case 8:
-    start_game_grupp8();
-    breaK;
+   
     case 1:
     //anrop till grupp 1's funktion
       break;
+
+    case 8:
+      start_game_grupp8();
+      break;
+
     case 13:
-    start_game_grupp13();       /* i assume that systick and uarte is initiated, and that nonblocking uarte is also initiated
-                                the goal of the game is to eat 10 "O" characters and at the same time avoid the "I" character*/
+      start_game_grupp13();       /* i assume that systick and uarte is initiated, and that nonblocking uarte is also initiated
+                                   the goal of the game is to eat 10 "O" characters and at the same time avoid the "I" character*/
       break;
 
     case 17:
