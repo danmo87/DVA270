@@ -21,6 +21,9 @@ int keypress = get_key();
     case 1:
     //anrop till grupp 1's funktion
     break;
+    case 14:
+    start_game_grupp14(); //banger-spel
+    break;
     case 17:
     start_game_grupp17();
     break;
