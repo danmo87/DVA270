@@ -14,6 +14,7 @@
 #include "grupp25_game.h"
 #include "grupp6spel.h" // Grupp 6 sten sax påse
 #include <group19.h>
+#include <nonblocking.h>// Grupp 5 tjuv och polis spel wdas jlki för rörelse
 
 
 /* By Daniel Morberg*/
@@ -31,6 +32,9 @@ int keypress = get_key();
     case 1:
     //anrop till grupp 1's funktion
     break;
+
+    case 5:
+    start_game_grupp5();
 
     case 21:
     start_game_grupp21();
