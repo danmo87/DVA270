@@ -8,6 +8,7 @@
 #include <Daniel_GPIO.h> //Ni behöver alltså inte inkludera er egna UARTE write, förutsätt att det finns en uarte_write, uarte_init osv osv
 #include "grupp1.h" //inkludera er header fil.
 #include "header17.h"//Grupp 17;Spelet går ut på att komma till rätt okänd koordinat mha. förflyttning med j,k,l,i
+#include "grupp25_game.h"
 
 
 /* By Daniel Morberg*/
@@ -23,6 +24,9 @@ int keypress = get_key();
     break;
     case 17:
     start_game_grupp17();
+    break;
+    case 25:
+    start_game_grupp25();
     break;
     
   //osv osv
