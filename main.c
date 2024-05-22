@@ -9,6 +9,7 @@
 #include "grupp8spel.h"
 #include "13.h" //inkludera er header fil.
 #include "grupp1.h" //inkludera er header fil.
+#include "Grupp3.h"
 #include "grupp_21.h"
 #include "header17.h"//Grupp 17;Spelet går ut på att komma till rätt okänd koordinat mha. förflyttning med j,k,l,i
 #include "grupp25_game.h"
@@ -31,7 +32,9 @@ int keypress = get_key();
     case 1:
     //anrop till grupp 1's funktion
     break;
-
+    case 3:
+    start_game_grupp3();
+      break;
     case 21:
     start_game_grupp21();
     break;
