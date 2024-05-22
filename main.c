@@ -30,7 +30,9 @@ int keypress = get_key();
     case 1:
     //anrop till grupp 1's funktion
       break;
-
+    case 4:
+    start_game_grupp4();
+    break;
     case 8:
       start_game_grupp8();
       break;
