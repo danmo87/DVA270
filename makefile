@@ -22,8 +22,8 @@ SRC_FILES        += main.c
 #SRC_FILES        += list.c
 SRC_FILES        += grupp8spel.c
 # Här kan ni länka till extra source filer ni vill använda.
-#SRC_FILES        += $(PROJ)/drivers/src/nrfx_uarte.c
-#SRC_FILES		 += $(PROJ)/drivers/src/nrfx_systick.c
+SRC_FILES        += $(PROJ)/drivers/src/nrfx_uarte.c
+SRC_FILES		 += $(PROJ)/drivers/src/nrfx_systick.c
 #SRC_FILES		 += $(PROJ)/drivers/src/nrfx_temp.c
 #SRC_FILES		 += list.c
 #SRC_FILES		 += $(PROJ)/drivers/src/nrfx_rtc.c
