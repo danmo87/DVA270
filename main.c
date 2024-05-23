@@ -96,12 +96,6 @@ int main(void)
         case 27:
             // (felaktigt) antar att inget är initialiserat.
             // Använder med mening inga bibliotek förutom de inbyggda.
-            
-            // Desc sv: Det klassiska tre-i-rad-spelet med automatisk detektion för vinst och oavgjort.
-            //          Spelas med två spelare.
-            
-            // Desc en: The classic tic-tac-toe game with automatic win and draw detection.
-            //          This game is for two players.
             start_game_grupp27();
             break;
         //osv...
