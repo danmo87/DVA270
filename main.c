@@ -92,6 +92,9 @@ int main(void)
         case 15: 
             start_game_grupp15();
             break;
+        case 23: 
+            start_game_grupp23();
+            break;
         case 20:
             start_game_grupp20();
             break;
