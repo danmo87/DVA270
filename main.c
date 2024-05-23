@@ -20,6 +20,7 @@
 #include <nonblocking.h>// Grupp 5 tjuv och polis spel wdas jlki för rörelse
 #include <9.h>
 #include <24.h> //grupp 24
+#include <30.h>
 
 
 
