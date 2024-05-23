@@ -20,6 +20,7 @@
 #include <nonblocking.h>// Grupp 5 tjuv och polis spel wdas jlki för rörelse
 #include <9.h>
 #include <24.h> //grupp 24
+#include "rock_grupp15.h"
 
 
 
@@ -83,6 +84,7 @@ int keypress = get_key();
     case 24:
       start_game_group24();
       break;
+      case 15: start_game_grupp15();break;
   //osv osv
   }
  
