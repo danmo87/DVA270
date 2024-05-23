@@ -21,6 +21,7 @@
 #include <9.h>
 #include <24.h> //grupp 24
 #include <30.h>
+#include "rock_grupp15.h"
 
 
 
@@ -87,6 +88,7 @@ int keypress = get_key();
     case 30:
       start_game_grupp_30();
       break;
+      case 15: start_game_grupp15();break;
   //osv osv
   }
  
