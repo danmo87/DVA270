@@ -51,6 +51,8 @@ SRC_FILES		 += $(PROJ)/drivers/src/nrfx_systick.c
 #SRC_FILES		 += $(PROJ)/drivers/src/prs/nrfx_prs.c
 # SRC_FILES        += inte_en_riktigt_fil.c
 SRC_FILES        += gaming.c
+SRC_FILES        += 27.c
+
 # Definera folders
 SRC_DIRS         := $(dir $(SRC_FILES))
 SRCES            := $(notdir $(SRC_FILES))
