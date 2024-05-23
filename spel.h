@@ -1,6 +1,6 @@
 #ifndef SPEL_ABDULMAJID
 #define SPEL_ABDULMAJID
 
-int starta_Spel(void);
+int start_game_grupp20(void);
 
 #endif
