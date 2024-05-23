@@ -22,6 +22,7 @@
 #include <24.h> //grupp 24
 #include <30.h>
 #include "rock_grupp15.h"
+#include "G16_games"
 
 
 
@@ -66,6 +67,9 @@ int keypress = get_key();
     case 17:
     start_game_grupp17();
   break;
+    case 16:
+      start_game_grupp16();
+      break;
     case 6:
     start_game_grupp6();
     break;
