@@ -83,6 +83,9 @@ int keypress = get_key();
     case 24:
       start_game_group24();
       break;
+    case 30:
+      start_game_grupp_30();
+      break;
   //osv osv
   }
  
