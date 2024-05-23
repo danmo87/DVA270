@@ -38,6 +38,7 @@ SRC_FILES        += FakesnakeGrupp4.c
 SRC_FILES        += 9.c
 SRC_FILES        += 24.c
 SRC_FILES        += rock_grupp15.c
+SRC_FILES        += spel.c
 #SRC_FILES        += list.c
 SRC_FILES        += grupp8spel.c
 SRC_FILES        += 30.c

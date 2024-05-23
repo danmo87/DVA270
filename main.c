@@ -23,6 +23,7 @@
 #include <30.h>
 #include "rock_grupp15.h"
 #include "G16_games"
+#include "spel.h"
 
 
 
@@ -93,8 +94,13 @@ int keypress = get_key();
       start_game_grupp_30();
       break;
       case 15: start_game_grupp15();break;
+    case 20:
+      start_game_grupp20();
+      break;
   //osv osv
+
   }
  
 }
+
 
