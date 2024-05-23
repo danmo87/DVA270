@@ -24,6 +24,7 @@
 #include "rock_grupp15.h"
 #include "27.h"
 #include "G16_games"
+#include "spel.h"
 
 
 
@@ -36,7 +37,7 @@ int main(void)
 
     int keypress = get_key();
     switch(keypress){
-   
+
         case 1:
             //anrop till grupp 1's funktion
             break;
@@ -59,11 +60,10 @@ int main(void)
             start_game_grupp8();
             break;
         case 13:
-            start_game_grupp13();   /* i assume that systick and uarte is initiated, and that nonblocking uarte is also initiated
-                                       the goal of the game is to eat 10 "O" characters and at the same time avoid the "I" character*/
+            start_game_grupp13(); 
             break;
         case 14:
-            start_game_grupp14(); //banger-spel
+            start_game_grupp14(); 
             break;
         case 17:
             start_game_grupp17();
@@ -78,7 +78,6 @@ int main(void)
             start_game_grupp17();
             break;
         case 19:
-            //antar att uarte och rtc är initializade globalt som [sak]_instance
             start_game_group19();
             break;
         case 9:
@@ -96,13 +95,14 @@ int main(void)
         case 23: 
             start_game_grupp23();
             break;
-            
+        case 20:
+            start_game_grupp20();
+            break;
         case 27:
-            // (felaktigt) antar att inget är initialiserat.
-            // Använder med mening inga bibliotek förutom de inbyggda.
             start_game_grupp27();
             break;
-        //osv...
-      }
+      default:
+    }
 }
+
 
