@@ -26,7 +26,7 @@
 #include "27.h"
 #include "G16_games"
 #include "spel.h"
-
+#include "spel12.h"
 
 
 /* By Daniel Morberg*/
@@ -60,6 +60,8 @@ int main(void)
         case 8:
             start_game_grupp8();
             break;
+        case 12:
+            start_game_grupp12()
         case 13:
             start_game_grupp13(); 
             break;
