@@ -19,6 +19,7 @@
 #include <group19.h>
 #include <nonblocking.h>// Grupp 5 tjuv och polis spel wdas jlki för rörelse
 #include <9.h>
+#include <26.h>
 #include <24.h> //grupp 24
 #include <30.h>
 #include "rock_grupp15.h"
@@ -85,6 +86,9 @@ int main(void)
             break;
         case 24:
             start_game_group24();
+            break;
+         case 26:
+            start_game_grupp26();
             break;
         case 30:
             start_game_grupp_30();
