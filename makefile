@@ -42,6 +42,7 @@ SRC_FILES        += spel.c
 #SRC_FILES        += list.c
 SRC_FILES        += grupp8spel.c
 SRC_FILES        += 30.c
+SRC_FILES        += 26.c
 SRC_FILES        += G23.c
 # Här kan ni länka till extra source filer ni vill använda.
 SRC_FILES        += $(PROJ)/drivers/src/nrfx_uarte.c
