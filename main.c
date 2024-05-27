@@ -27,7 +27,7 @@
 #include "G16_games"
 #include "spel.h"
 #include "spel12.h"
-
+#include "grupp10.h"
 
 /* By Daniel Morberg*/
 
@@ -42,6 +42,8 @@ int main(void)
         case 1:
             //anrop till grupp 1's funktion
             break;
+        case 10:
+            start_game_grupp10();
         case 5:
             start_game_grupp5();
             break;
