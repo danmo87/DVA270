@@ -29,23 +29,28 @@ static void waitTX(nrfx_uarte_t *instance) {
   return;
 }
 
+// Draws the game grid
 void drawGrid(int x_pos, int y_pos, int target_x, int target_y,
               uint8_t backround, uint8_t player, uint8_t target) {
 
   static uint8_t grid[HEIGHT][WIDTH];
   nrfx_uarte_tx(&uarte_instance, Clear_Screen, sizeof(Clear_Screen), 0);
   waitTX(&uarte_instance);
+
+  // Loop through every coordinate
   for (int y = 0; y < HEIGHT; y++) {
     for (int x = 0; x < WIDTH; x++) {
       if (x == x_pos && y == y_pos) {
-        grid[y][x] = player;
+        grid[y][x] = player; // if player is at coordinate
       } else if (x == target_x && y == target_y) {
-        grid[y][x] = target;
+        grid[y][x] = target; // if target is at player
       } else {
-        grid[y][x] = backround;
+        grid[y][x] = backround; // otherwise just set to background
       }
     }
   }
+
+  // Print grid to console
   for (int row = HEIGHT - 1; row >= 0; row--) {
     nrfx_uarte_tx(&uarte_instance, grid[row], sizeof(grid[row]), 0);
     waitTX(&uarte_instance);
@@ -54,10 +59,12 @@ void drawGrid(int x_pos, int y_pos, int target_x, int target_y,
     waitTX(&uarte_instance);
   }
 }
-void uarte_handler_game_group19(nrfx_uarte_event_t const *p_event,
-                                void *p_context) {
+
+void uarte_handler_game_group19(nrfx_uarte_event_t const *p_event, void *p_context) {
   nrfx_uarte_t *p_inst = p_context;
   if (p_event->type == NRFX_UARTE_EVT_RX_DONE) {
+
+    // Read input from user
     switch (Read_Buffer) {
     case 'w':
       y = positive_modulo(y + 1, HEIGHT);
@@ -77,24 +84,30 @@ void uarte_handler_game_group19(nrfx_uarte_event_t const *p_event,
       break;
     }
 
+    //Update score if at target
     if (target_x == x && target_y == y) {
       score++;
       do {
+        // Update target to new position which isnt inside the player
         target_y = (rand() % 9) + 1;
         target_x = (rand() % 9) + 1;
       } while (target_x == x && target_y == y);
     }
+
+    // highscore logic
     if (score >= MAX_SCORE) {
       currentTime = nrfx_rtc_counter_get(&rtc_instance) / 32.768;
       score = 0;
-      nrfx_rtc_counter_clear(&rtc_instance);
-      nrfx_rtc_disable(&rtc_instance);
+      nrfx_rtc_counter_clear(&rtc_instance); // reset the time
+      nrfx_rtc_disable(&rtc_instance); // pause time (which will pause the game)
+      
+      // check if is new highscore
       if (highscore > currentTime) {
         highscore = currentTime;
       }
     }
-    srand(score + Read_Buffer);
-    nrfx_uarte_rx(&uarte_instance, &Read_Buffer, sizeof(Read_Buffer));
+    srand(score + Read_Buffer); //update seed
+    nrfx_uarte_rx(&uarte_instance, &Read_Buffer, sizeof(Read_Buffer)); // this is the magic sauce, it will call itself which means its extremely unlikely it will drop user inputs (not tied to game refresh rate)
   }
 }
 
@@ -112,19 +125,23 @@ void start_game_group19() {
 
     drawGrid(x, y, target_x, target_y, '-', 'X', 'O');
 
+    // print current time
     currentTime = nrfx_rtc_counter_get(&rtc_instance) / 32.768;
     int len = sprintf(Print_Buffer, "Time: %d\n\r", currentTime);
     nrfx_uarte_tx(&uarte_instance, Print_Buffer, len, 0);
     waitTX(&uarte_instance);
 
+    // print highscore
     len = sprintf(Print_Buffer, "highscore  %d\n\r", highscore);
     nrfx_uarte_tx(&uarte_instance, Print_Buffer, len, 0);
     waitTX(&uarte_instance);
 
+    // print score
     len = sprintf(Print_Buffer, "Score: %d\n\r", score);
     nrfx_uarte_tx(&uarte_instance, Print_Buffer, len, 0);
     waitTX(&uarte_instance);
 
+    //small delay
     nrfx_systick_delay_ms(50);
   }
 }
