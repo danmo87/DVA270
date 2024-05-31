@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <Daniel_GPIO.h> //Ni behöver alltså inte inkludera er egna UARTE write, förutsätt att det finns en uarte_write, uarte_init osv osv
 #include "grupp8spel.h"
+#include "Grupp11.h"
 #include "13.h" //inkludera er header fil.
 #include "14.h"
 #include "hungry_elephant_game14"
@@ -44,6 +45,10 @@ int main(void)
             break;
         case 10:
             start_game_grupp10();
+            break;
+        case 11:
+            start_game_grupp11();
+            break;
         case 5:
             start_game_grupp5();
             break;
@@ -109,6 +114,7 @@ int main(void)
         case 27:
             start_game_grupp27();
             break;
+
       default:
     }
 }
